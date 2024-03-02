@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+
+        {% if user.is_authenticated %}
+
+         
+
+          
+            <h3>Hi {{ user.username }}</h3>
+            <!-- <p><a href="{% url 'logout' %}">Log Out</a></p> -->
+            <div class="jumbotron">
+                <h2 class="display-4">NEWS Circle app</h2>
+                <p class="lead">It conveys the idea of a community-driven news platform, which could be appealing to both readers and contributors.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+                    role="button">View All Articles/NEWS</a>
+                </p>
+            </div>
+
+
+        
+            {% else %}
+            <div   class="alert alert-warning" role="alert">
+                You are not logged in. Please <a href="{% url 'login' %}" class="alert-link">Log In</a> or <a href="{% url 'signup' %}" class="alert-link">Sign Up</a>.
+            </div>
+
+             
+            
+ 
+
+        {% endif %}
+        
+    {% endblock content %}
+
+     
+</body>
+</html>
