@@ -14,6 +14,9 @@ class Article(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
+    post_img = models.ImageField(upload_to='post/', blank=True)
+    
+    
     def __str__(self):
         return self.title
     

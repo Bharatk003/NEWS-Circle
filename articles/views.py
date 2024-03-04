@@ -30,7 +30,7 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
 class ArticleUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
 
     model = Article
-    fields = ('title', 'body',)
+    fields = ('title', 'body','post_img')
     template_name = 'article_edit.html'
     login_url = 'login'
 
@@ -55,7 +55,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
     # success_url = reverse_lazy('article_detail')
-    fields = ('title','body')
+    fields = ('title','body', 'post_img')
 
     login_url = 'login'
 

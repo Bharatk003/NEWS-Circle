@@ -1,20 +1,64 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
+
 <html lang="en">    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Article</title>
+    <style>
+        .input-field textarea{
+            margin-top: 3px;
+            width: 50%;
+            height: 80%;
+            padding: 0px;
+            border: 1px solid #b6b6b6;
+            border-radius: 4px;
+        }
+
+        .input-field input{
+            margin-top: 3px;
+            width: 50%;
+            height: 35px;
+            padding: 0px;
+            border: 1px solid #b6b6b6;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
+    {% extends 'base.html' %}
     {% block content %}
 
     <h1>New Article</h1>
     <div>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn btn-success ml-2" type="submit">Save</button>
+             
+
+            <div class="form-group">
+                <label for="title">Title: </label>
+                <div class="input-field">
+                    {{form.title}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Body: </label>
+                <div class="input-field">
+                    {{form.body}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="post_img">Post Image: </label>
+                <div class="">
+                    {{form.post_img}}
+                </div>
+            </div>
+
+
+     
+            <button class="btn btn-success ml-2" type="submit">Post</button>
         </form>
     </div>
 

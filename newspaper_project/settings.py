@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-78&=)#zn@_pzwahg)w(gmjrkk2dmgaa+sp2p*1-2!wl)3w!=o_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.104', 'localhost']
 
 
 # 26-1-23+4 
@@ -141,3 +141,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+MEDIA_URL = '/media/'
